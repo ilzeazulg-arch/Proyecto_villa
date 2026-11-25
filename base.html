@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Mundo Deportivo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <!-- Encabezado igual en todas las páginas -->
+    <header class="encabezado">
+        <div class="contenedor">
+            <h1>🏆 Mundo Deportivo</h1>
+            <p>Conoce, aprende y disfruta del deporte</p>
+        </div>
+    </header>
+
+    <!-- Menú igual en todas las páginas -->
+    <nav class="navegacion">
+        <a href="{{ url_for('inicio') }}">Inicio</a>
+        <a href="{{ url_for('futbol') }}">Fútbol</a>
+        <a href="{{ url_for('baloncesto') }}">Baloncesto</a>
+        <a href="{{ url_for('voleibol') }}">Voleibol</a>
+    </nav>
+
+    <!-- Aquí irá el contenido diferente de cada página -->
+    <main>
+        {% block contenido %}
+        {% endblock %}
+    </main>
+</body>
+</html>
